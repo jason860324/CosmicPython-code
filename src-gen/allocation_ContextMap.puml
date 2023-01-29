@@ -1,0 +1,38 @@
+@startuml
+
+skinparam componentStyle uml2
+
+component [BuyingTeam]
+component [Purchasing]
+component [Allocation]
+component [Customer]
+component [Ecommerce]
+component [Warehouse]
+
+interface "Upstream-Downstream" as Warehouse_to_Allocation
+[Allocation] --> Warehouse_to_Allocation
+Warehouse_to_Allocation <.. [Warehouse] : consume
+
+interface "Upstream-Downstream" as Ecommerce_to_Customer
+[Customer] --> Ecommerce_to_Customer
+Ecommerce_to_Customer <.. [Ecommerce] : consume
+
+interface "Upstream-Downstream" as Allocation_to_Ecommerce
+[Ecommerce] --> Allocation_to_Ecommerce
+Allocation_to_Ecommerce <.. [Allocation] : consume
+
+interface "Upstream-Downstream" as Purchasing_to_BuyingTeam
+[BuyingTeam] --> Purchasing_to_BuyingTeam
+Purchasing_to_BuyingTeam <.. [Purchasing] : consume
+
+interface "Upstream-Downstream" as Allocation_to_Purchasing
+[Purchasing] --> Allocation_to_Purchasing
+Allocation_to_Purchasing <.. [Allocation] : consume
+
+interface "Upstream-Downstream" as Customer_to_Warehouse
+[Warehouse] --> Customer_to_Warehouse
+Customer_to_Warehouse <.. [Customer] : consume
+
+
+
+@enduml

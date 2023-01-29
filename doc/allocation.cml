@@ -1,0 +1,36 @@
+ContextMap FurnitureRetailer {
+    	contains BuyingTeam
+    	contains Purchasing
+    	contains Allocation
+    	contains Customer
+    	contains Ecommerce        
+    	contains Warehouse 
+
+        Allocation-> Warehouse 
+        Customer -> Ecommerce
+        Ecommerce -> Allocation         
+        BuyingTeam -> Purchasing
+        Purchasing -> Allocation
+        Warehouse -> Customer
+}
+
+BoundedContext BuyingTeam
+BoundedContext Purchasing
+BoundedContext Allocation
+BoundedContext Customer
+BoundedContext Ecommerce        
+BoundedContext Warehouse 
+
+// UserStory Place_Order {
+//   As a "Customers" I want to "place" an "orders"
+
+// //   An "order" is identified by an "order reference" and comprises multiple "order lines", where each line has a "SKU" and a "quantity".
+// }
+
+// UserStory Fill_Stock {
+//   As "buyer" in "purchasing department" need "orders" small batches of "stock"
+
+// //   An "order" is identified by an "order reference" and comprises multiple "order lines", where each line has a "SKU" and a "quantity".
+// }
+
+
