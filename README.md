@@ -34,6 +34,8 @@ make all # builds, brings containers up, runs tests
 ```
 
 ## Creating a local virtualenv (optional)
+- use conda instead of venv
+- sqlalchemy downgrade to 1.3.24, mapper have remove after 1.4
 
 ```sh
 python3.8 -m venv .venv && source .venv/bin/activate # or however you like to create virtualenvs
@@ -42,10 +44,10 @@ python3.8 -m venv .venv && source .venv/bin/activate # or however you like to cr
 pip install pytest 
 
 # for chapter 2
-pip install pytest sqlalchemy
+pip install pytest sqlalchemy==1.3.24
 
 # for chapter 4+5
-pip install requirements.txt
+pip install -r requirements.txt
 
 # for chapter 6+
 pip install requirements.txt
